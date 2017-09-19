@@ -53,7 +53,9 @@ class Diagram {
   }
 
   update() {
-    let rects = this.gPoints.selectAll('rect').data(pointsOnACircle(this.t, this.t, this.t));
+    console.log(this.t);
+    let rects = this.gPoints.selectAll('rect').data(pointsOnACircle(this.t, this.t, this.t-1));
+    console.log(this.t);
     rects.exit().remove();
     rects.enter().append('rect')
       .attr('width', scale - 1)
